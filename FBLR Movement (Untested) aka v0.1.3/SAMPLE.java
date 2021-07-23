@@ -28,26 +28,31 @@ public class SAMPLE extends LinearOpMode {
         motor2 = hardwareMap.dcMotor.get("motor2");
         waitForStart();
         while (opModeIsActive()) {
+            // Defines value of variables
             a = gamepad1.a;
             b = gamepad1.b;
             x = gamepad1.y;
             y = gamepad1.x;
+            // A is to go backwards, so checks to see if off first before putting motors in reverse
             if (a && motor1On == false && motor2On == false) {
                 motor1.setPower(-1.00);
                 motor2.setPower(1.00);
                 motor1On = true;
                 motor2On = true;
             }
+            // B is to go right, so checks to see if off first before putting one motor on
             if (b && motor2On == false) {
                 motor2.setPower(-1.00);
                 motor2On = true;
-            } // a == right
+            } 
+            // X is to go forwards, so checks to see if off first before putting motors on
             if (x && motor1On == false && motor2On == false) {
                 motor1.setPower(1.00);
                 motor2.setPower(-1.00);
                 motor2On = true;
                 motor1On = true;
             }
+            // Y is left, turns a motor on
             if (y && motor1On == false) {
                 motor1.setPower(1.00);
                 motor1On = true;
