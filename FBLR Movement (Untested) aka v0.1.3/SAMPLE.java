@@ -41,33 +41,33 @@ public class SAMPLE extends LinearOpMode {
                 motor2On = true;
             }
             // B is to go right, so checks to see if off first before putting one motor on
-            if (b && motor2On == false) {
+            else if (b && motor2On == false) {
                 motor2.setPower(-1.00);
                 motor2On = true;
             } 
             // X is to go forwards, so checks to see if off first before putting motors on
-            if (x && motor1On == false && motor2On == false) {
+            else if (x && motor1On == false && motor2On == false) {
                 motor1.setPower(1.00);
                 motor2.setPower(-1.00);
                 motor2On = true;
                 motor1On = true;
             }
             // Y is left, turns a motor on
-            if (y && motor1On == false) {
+            else if (y && motor1On == false) {
                 motor1.setPower(1.00);
                 motor1On = true;
             }
-            if (a && motor1On || x && motor1On) {
+            else if (a && motor1On || x && motor1On) {
                 motor1.setPower(0.00);
                 motor2.setPower(0.00);
                 motor1On = false;
                 motor2On = false;
             }
-            if (b && motor2On) {
+            else if (b && motor2On) {
                 motor2.setPower(0.00);
                 motor2On = false;
             }
-            if (y && motor1On){
+            else if (y && motor1On){
                 motor1.setPower(0.00);
                 motor1On = false;
             }
