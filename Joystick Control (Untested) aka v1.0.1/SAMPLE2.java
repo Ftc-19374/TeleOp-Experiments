@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.I2cAddr;
 
 @TeleOp(name="Driving in all directions")
-public class SAMPLE extends LinearOpMode {
+public class SAMPLE2 extends LinearOpMode {
     // Variable creations
     double x;
     double y;
@@ -25,8 +25,8 @@ public class SAMPLE extends LinearOpMode {
         while (opModeIsActive()) {
             x = gamepad1.left_stick_y;
             y = gamepad1.left_stick_x;
-            motor1.setPower(x - (0.5 * y));
-            motor2.setPower(-x - (0.5 * y));
+            motor1.setPower(Range.clip(-x + (0.5 * y), -1.0, 1.0);
+            motor2.setPower(Range.clip(x + (0.5 * y), -1.0, 1.0);
 
         }
         motor1.setPower(0.00);
