@@ -39,7 +39,7 @@ public class ClawControl extends LinearOpMode {
             motor1.setPower(Range.clip(-x - (0.5 * y), -1.0, 1.0));
             motor2.setPower(Range.clip(x - (0.5 * y), -1.0, 1.0));
             //Arm motor being clipped just in case
-            arm_motor.setPower(Range.clip((p/2), -0.5, 0.5));
+            arm_motor.setPower(Range.clip((p/4), -0.5, 0.5));
             if (a){
                 servo.setPower(1.00);
                 wait(1);
